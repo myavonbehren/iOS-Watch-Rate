@@ -1,0 +1,17 @@
+//
+//  mvonbehr_final_projectTests.swift
+//  mvonbehr-final-projectTests
+//
+//  Created by Mya Von Behren on 5/19/25.
+//
+
+import Testing
+@testable import mvonbehr_final_project
+
+struct mvonbehr_final_projectTests {
+
+    @Test func example() async throws {
+        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    }
+
+}
