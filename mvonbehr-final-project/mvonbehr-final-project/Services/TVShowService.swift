@@ -31,4 +31,19 @@ enum TVShowError: Error {
     
     // JSON Decoding error
     case serializationError
+    
+    var localizedDescription: String {
+        switch self {
+        case .apiError:
+            return "An unexpected error occurred."
+        case .invalidResponse:
+            return "The server returned an invalid response."
+        case .invalidEndpoint:
+            return "The provided endpoint is invalid."
+        case .noData:
+            return "The server returned no data."
+        case .serializationError:
+            return "Failed to decode the JSON response."
+        }
+    }
 }
