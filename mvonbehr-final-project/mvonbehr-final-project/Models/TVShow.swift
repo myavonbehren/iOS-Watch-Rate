@@ -25,4 +25,8 @@ struct TVShow: Codable {
         case posterPath = "poster_path"
         case firstAirDate = "first_air_date"
     }
+    
+    var backdropURL: URL {
+        return URL(string: "https://image.tmdb.org/t/p/w500\(backdropPath ?? "")")!
+    }
 }
