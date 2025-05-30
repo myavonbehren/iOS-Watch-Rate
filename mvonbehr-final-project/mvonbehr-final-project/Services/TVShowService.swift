@@ -9,7 +9,6 @@ import Foundation
 
 /// Defines the contract for TV show data retrieval operations
 protocol TVShowService {
-    func fetchTVShows(from endpoint: TVShowEndpoint) async throws -> [TVShow]
     func fetchTVShow(id: Int) async throws -> TVShow
     func searchTVShow(query: String) async throws -> [TVShow]
 }
