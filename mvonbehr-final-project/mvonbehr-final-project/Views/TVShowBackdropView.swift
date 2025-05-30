@@ -24,5 +24,5 @@ struct TVShowBackdropView: View {
 }
 
 #Preview {
-    TVShowBackdropView()
+    TVShowBackdropView(show: TVShow.mockTVShow)
 }
