@@ -7,17 +7,14 @@
 
 import Foundation
 
+/// Defines the contract for TV show data retrieval operations
 protocol TVShowService {
     func fetchTVShows(from endpoint: TVShowEndpoint) async throws -> [TVShow]
     func fetchTVShow(id: Int) async throws -> TVShow
     func searchTVShow(query: String) async throws -> [TVShow]
 }
 
-enum TVShowEndpoint: String {
-    case search = "/search/tv"
-    case details = "/tv"
-}
-
+/// Comprehensive error types for TV show API operations
 enum TVShowError: Error, CustomNSError {
     // General API failure when the request cannot be completed
     case apiError
