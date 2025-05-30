@@ -12,7 +12,7 @@ struct TVShow: Codable {
     var name: String
     var overview: String
     var posterPath: String?
-    var firstAirDate: String
+    var firstAirDate: Date
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
