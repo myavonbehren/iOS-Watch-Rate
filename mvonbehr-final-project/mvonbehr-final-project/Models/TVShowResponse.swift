@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TVShowSearchResponse: Decodable {
+struct TVShowResponse: Decodable {
     let page: Int
     let results: [TVShow]
 }
