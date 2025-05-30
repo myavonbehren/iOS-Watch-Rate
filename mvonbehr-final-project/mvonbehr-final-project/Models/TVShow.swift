@@ -6,7 +6,9 @@
 //
 
 import Foundation
-
+/// Represents a television show from The Movie Database (TMDB) API
+/// This model contains information about a TV show including, its id,
+/// name, description, visual assets, and original air date.
 struct TVShow: Codable {
     var id: Int
     var name: String
