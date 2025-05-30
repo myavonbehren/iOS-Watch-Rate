@@ -36,3 +36,14 @@ struct TVShow: Codable {
         return URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)")
     }
 }
+
+extension TVShow {
+    static let mockTVShow = TVShow(
+        id: 1668,
+        name: "Friends",
+        overview: "Six young people from New York City, on their own and struggling to survive in the real world, find the companionship, comfort and support they get from each other to be the perfect antidote to the pressures of life.",
+        backdropPath: "/l0qVZIpXtIo7km9u5Yqh0nKPOr5.jpg",
+        posterPath: "/2koX1xLkpTQM4IZebYvKysFW1Nh.jpg",
+        firstAirDate: Date()
+    )
+}
