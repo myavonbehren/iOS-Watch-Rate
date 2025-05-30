@@ -7,15 +7,38 @@
 
 import Foundation
 
-struct TVShow: Decodable {
-    let id: Int
-    let name: String
-    let overview: String
-    let poster_path: String
-    let first_air_date: String
+struct TVShow: Codable {
+    var id: Int
+    var name: String
+    var overview: String
+    var posterPath: String?
+    var firstAirDate: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case name = "name"
+        case overview = "overview"
+        case posterPath = "poster_path"
+        case firstAirDate = "first_air_date"
+    }
 }
 
+
 /*
+ struct Station: Codable {
+     var stationName: String
+     var mapID: String
+     var isRed: Bool
+     
+     // Map between Swift property and JSON field name
+     enum CodingKeys: String, CodingKey {
+         case stationName = "station_name"
+         case mapID = "map_id"
+         case isRed = "red"
+     }
+ 
+ 
+ 
  {
    "page": 1,
    "results": [
