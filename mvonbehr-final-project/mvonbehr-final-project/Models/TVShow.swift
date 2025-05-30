@@ -13,6 +13,7 @@ struct TVShow: Codable {
     var id: Int
     var name: String
     var overview: String
+    var backdropPath: String?
     var posterPath: String?
     var firstAirDate: Date
     
@@ -20,6 +21,7 @@ struct TVShow: Codable {
         case id = "id"
         case name = "name"
         case overview = "overview"
+        case backdropPath = "backdrop_path"
         case posterPath = "poster_path"
         case firstAirDate = "first_air_date"
     }
