@@ -16,7 +16,7 @@ enum TVShowEndpoint: String {
     case details = "/tv"
 }
 
-enum TVShowError: Error {
+enum TVShowError: Error, CustomNSError {
     // General API failure when the request cannot be completed
     case apiError
     
@@ -45,5 +45,9 @@ enum TVShowError: Error {
         case .serializationError:
             return "Failed to decode the JSON response."
         }
+    }
+    
+    var errorUserInfo: [String: Any] {
+        [NSLocalizedDescriptionKey: localizedDescription]
     }
 }
