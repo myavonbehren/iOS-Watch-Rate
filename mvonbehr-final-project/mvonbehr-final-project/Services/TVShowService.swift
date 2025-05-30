@@ -8,7 +8,7 @@
 import Foundation
 
 protocol TVShowService {
-    
+    func fetchTVShows(from endpoint: TVShowEndpoint, completion: @escaping (Result<TVShowSearchResponse, TVShowError>) -> Void)
 }
 
 enum TVShowEndpoint: String {
