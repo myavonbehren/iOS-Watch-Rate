@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct TVShowBackdropView: View {
-        
+    private var show: TVShow
+    
+    init(show: TVShow) {
+        self.show = show
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        AsyncImage(url: show.backdropURL) { image in
+            image.resizable()
+        } placeholder: {
+            Image(systemName: "photo")
+        }
     }
 }
 
