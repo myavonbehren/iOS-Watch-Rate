@@ -12,7 +12,7 @@ struct LoadingView: View {
         VStack (spacing: 30) {
             ProgressView()
                 .scaleEffect(1.5)
-            Text("Loading show details...")
+            Text("Loading TV show details...")
                 .foregroundColor(.secondary)
         }
     }
