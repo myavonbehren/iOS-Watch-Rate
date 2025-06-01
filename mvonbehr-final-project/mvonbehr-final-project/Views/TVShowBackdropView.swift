@@ -15,11 +15,23 @@ struct TVShowBackdropView: View {
     }
     
     var body: some View {
-        AsyncImage(url: show.backdropURL) { image in
-            image.resizable()
-        } placeholder: {
-            Image(systemName: "photo")
+        VStack(alignment: .leading) {
+            ZStack {
+                AsyncImage(url: show.backdropURL) { image in
+                    image.resizable()
+                } placeholder: {
+                        Rectangle()
+                            .fill(Color.black.opacity(0.5))
+                            .overlay(
+                                Image(systemName: "photo")
+                                    .foregroundColor(.white)
+                                    .font(.largeTitle)
+                            )
+                }
+            }
+            .aspectRatio(16/9, contentMode: .fit)
         }
+        
     }
 }
 
