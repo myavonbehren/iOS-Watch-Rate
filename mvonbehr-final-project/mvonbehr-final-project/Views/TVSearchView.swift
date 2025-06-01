@@ -14,14 +14,26 @@ struct TVSearchView: View {
         List {
             ForEach(tvSearchState.tvShows) { tvShow in
                 NavigationLink(destination: ReviewFormView(showId: tvShow.id)){
-                    
+                    TVShowRowView(tvShow: tvShow).padding(.vertical, 8)
                 }
             }
         }
+        .searchable(text: $tvSearchState.query, prompt: "Search TV Shows")
+        .overlay(content: <#T##() -> View#>)
         .onAppear{
             self.tvSearchState.startObserve()
         }
         .navigationTitle(Text("Search TV Shows"))
+    }
+    
+    @ViewBuilder
+    private var overlayView: some View {
+        switch tvSearchState.phase {
+        case .empty:
+            if tvSearchState.trimmedQuery.isEmpty {
+               
+            }
+        }
     }
     
 }
@@ -30,6 +42,16 @@ struct TVShowRowView: View {
     let tvShow: TVShow
     
     var body: some View {
+        HStack(alignment: .top, spacing: 16) {
+            VStack(alignment: .leading) {
+                Text(tvShow.name)
+                    .font(.headline)
+                
+                Text(tvShow.yearText)
+                    .font(.subheadline)
+                Spacer()
+            }
+        }
         
     }
 }
