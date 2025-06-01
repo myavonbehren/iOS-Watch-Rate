@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct TVShowContentView: View {
+    let show: TVShow
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 16) {
+            TVShowBackdropView(show: show)
+            VStack(alignment: .leading, spacing: 16){
+                Text(show.name)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                Text(show.yearText)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
+            .padding(.horizontal)
+        }
+        Spacer()
     }
 }
 
 #Preview {
-    TVShowContentView()
+    TVShowContentView(show: TVShow.mockTVShow)
 }
