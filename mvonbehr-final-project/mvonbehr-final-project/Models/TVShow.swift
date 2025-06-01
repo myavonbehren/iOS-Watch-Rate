@@ -15,7 +15,7 @@ struct TVShow: Codable {
     var overview: String
     var backdropPath: String?
     var posterPath: String?
-    var firstAirDate: Date
+    var firstAirDate: String
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -35,6 +35,19 @@ struct TVShow: Codable {
         guard let posterPath = posterPath else { return nil }
         return URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)")
     }
+    
+    static private let yearFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy"
+        return formatter
+    }()
+    
+    var yearText: String {
+        guard let date = Utils.dateFormatter.date(from: firstAirDate) else {
+            return "n/a"
+        }
+        return TVShow.yearFormatter.string(from: date)
+    }
 }
 
 extension TVShow {
@@ -44,6 +57,6 @@ extension TVShow {
         overview: "Six young people from New York City, on their own and struggling to survive in the real world, find the companionship, comfort and support they get from each other to be the perfect antidote to the pressures of life.",
         backdropPath: "/l0qVZIpXtIo7km9u5Yqh0nKPOr5.jpg",
         posterPath: "/2koX1xLkpTQM4IZebYvKysFW1Nh.jpg",
-        firstAirDate: Date()
+        firstAirDate: "1994-09-22"
     )
 }
