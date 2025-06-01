@@ -19,6 +19,7 @@ struct TVShowContentView: View {
                 Text(show.yearText)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
+                Text(show.overview)
             }
             .padding(.horizontal)
         }
