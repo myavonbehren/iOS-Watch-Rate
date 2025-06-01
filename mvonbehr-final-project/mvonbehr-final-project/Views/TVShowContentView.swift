@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TVShowContentView: View {
     let show: TVShow
+    let showDescription: Bool
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             TVShowBackdropView(show: show)
@@ -28,5 +30,5 @@ struct TVShowContentView: View {
 }
 
 #Preview {
-    TVShowContentView(show: TVShow.mockTVShow)
+    TVShowContentView(show: TVShow.mockTVShow, showDescription: true)
 }
