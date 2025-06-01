@@ -27,7 +27,6 @@ struct TVShowContentView: View {
             }
             .padding(.horizontal)
         }
-        Spacer()
     }
 }
 

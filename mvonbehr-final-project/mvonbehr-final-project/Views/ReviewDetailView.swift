@@ -13,8 +13,31 @@ struct ReviewDetailView: View {
     
     var body: some View {
         ZStack {
-            
+            if tvShowDetailState.isLoading {
+                LoadingView()
+            } else if let error = tvShowDetailState.error {
+                ErrorView(error: error) {
+                    await loadShow()
+                }
+            } else if let show = tvShowDetailState.tvShow {
+                VStack (alignment: .leading, spacing: 10) {
+                    TVShowContentView(show: show, showDescription: false)
+                    VStack (alignment: .leading) {
+                        Text("Star rating")
+                        Text("Liked")
+                        Text("Review text")
+                    }.padding(.horizontal)
+                }
+            }
         }
+        .task {
+            await loadShow()
+        }
+        Spacer()
+    }
+    
+    private func loadShow() async {
+        await tvShowDetailState.loadTVShow(id: showId)
     }
 }
 
