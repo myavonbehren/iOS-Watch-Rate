@@ -42,5 +42,5 @@ struct ReviewDetailView: View {
 }
 
 #Preview {
-    ReviewDetailView(showId: TVShow.mockTVShow.id )
+    ReviewDetailView(showId: TVShow.mockTVShow.id)
 }
