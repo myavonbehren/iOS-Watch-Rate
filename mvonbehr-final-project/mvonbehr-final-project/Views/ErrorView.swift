@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ErrorView: View {
-    //let error: Error
-    //let retry: () async -> Void
+    let error: Error
+    let retry: () async -> Void
     
     var body: some View {
         VStack (spacing: 16) {
@@ -19,11 +19,24 @@ struct ErrorView: View {
             
             Text("Something went wrong")
                 .foregroundColor(.secondary)
+            
+            Text(error.localizedDescription)
+                .font(.caption)
+                .foregroundColor(.secondary)
+            
+            Button("Try Again") {
+                Task {
+                    await retry()
+                }
+            }
         }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
-
+/*
 #Preview {
     ErrorView()
 }
+*/
