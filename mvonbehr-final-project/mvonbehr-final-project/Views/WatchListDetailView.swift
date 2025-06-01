@@ -8,11 +8,34 @@
 import SwiftUI
 
 struct WatchListDetailView: View {
+    let showId: Int
+    @ObservedObject private var tvShowDetailState = TVShowDetailState()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            if tvShowDetailState.isLoading {
+                LoadingView()
+            } else if let error = tvShowDetailState.error {
+                ErrorView(error: error) {
+                    await loadShow()
+                }
+            } else if let show = tvShowDetailState.tvShow {
+                VStack (alignment: .leading, spacing: 10) {
+                    TVShowContentView(show: show, showDescription: true)
+                }
+            }
+        }
+        .task {
+            await loadShow()
+        }
+        Spacer()
+    }
+    
+    private func loadShow() async {
+        await tvShowDetailState.loadTVShow(id: showId)
     }
 }
 
 #Preview {
-    WatchListDetailView()
+    WatchListDetailView(showId: TVShow.mockTVShow.id)
 }
