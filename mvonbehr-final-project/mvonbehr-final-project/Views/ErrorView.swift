@@ -8,10 +8,21 @@
 import SwiftUI
 
 struct ErrorView: View {
+    //let error: Error
+    //let retry: () async -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack (spacing: 16) {
+            Image(systemName: "exclamationmark.triangle")
+                .font(.system(size: 50))
+                .foregroundColor(.red)
+            
+            Text("Something went wrong")
+                .foregroundColor(.secondary)
+        }
     }
 }
+
 
 #Preview {
     ErrorView()
