@@ -18,8 +18,8 @@ struct TVShowPosterView: View {
         ZStack {
             AsyncImage(url: show.posterURL) { image in
                 image.resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .cornerRadius(8)
+                    .aspectRatio(contentMode: .fill)
+                    .cornerRadius(5)
             } placeholder: {
                     Rectangle()
                         .fill(Color.black.opacity(0.5))
@@ -27,18 +27,12 @@ struct TVShowPosterView: View {
                             VStack {
                                 Image(systemName: "photo")
                                     .foregroundColor(.white)
-                                    .font(.largeTitle)
-                                Text(show.name)
-                                    .foregroundColor(.white)
-                                    .font(.headline)
-                                    .multilineTextAlignment(.center)
-                                    .padding()
+                                    .font(.title2)
                             }
                         )
-                        .cornerRadius(8)
+                        .cornerRadius(5)
             }
         }
-        .frame(width: 204, height: 306)
     }
 }
 
