@@ -8,15 +8,38 @@
 import SwiftUI
 
 struct ReviewFormView: View {
-    let showId: Int
+    private var show: TVShow
+    @State var rating: String = ""
+    @State var review: String = ""
+    
+    init(show: TVShow) {
+        self.show = show
+    }
     
     var body: some View {
-        Form {
-            Text("")
+        NavigationStack{
+            Form {
+                Section {
+                    Picker("Rating", selection: $rating) {
+                        ForEach(1..<6) { value in
+                            Text(String(value)).tag(Int16(value))
+                        }
+                    }
+                    TextField("Add a review...", text: $review, axis: .vertical)
+                        .lineLimit(15...30)
+                }
+                Section {
+                    Button("Save") {
+                        print("save pressed")
+                    }
+                }
+                
+            }
+            .navigationTitle("\(show.name) (\(show.yearText))")
         }
     }
 }
 
 #Preview {
-    ReviewFormView(showId: TVShow.mockTVShow.id)
+    ReviewFormView(show: TVShow.mockTVShow)
 }

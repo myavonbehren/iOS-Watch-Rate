@@ -64,7 +64,7 @@ struct TVSearchView: View {
     private func rowView(for tvShow: TVShow) -> some View {
         switch mode {
         case .review:
-            NavigationLink(destination: ReviewFormView(showId: tvShow.id)) {
+            NavigationLink(destination: ReviewFormView(show: tvShow)) {
                 TVShowRowView(tvShow: tvShow).padding(.vertical, 8)
             }
         case .watchlist:
