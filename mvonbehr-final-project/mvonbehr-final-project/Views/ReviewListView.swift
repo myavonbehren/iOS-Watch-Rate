@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ReviewListView: View {
     @State private var showSearchPopOver: Bool = false
-
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(sortDescriptors: []) var reviews: FetchedResults<Review>
+    
     var body: some View {
-        Text("Reviews")
+        Text("Review Count: \(reviews.count)")
             .navigationTitle(Text("Reviews"))
             .toolbar {
                 Button("Add Review", systemImage: "plus") {
