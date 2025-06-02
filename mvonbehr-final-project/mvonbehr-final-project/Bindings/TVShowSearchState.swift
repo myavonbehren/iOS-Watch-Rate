@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 import Foundation
 
+@MainActor
 class TVShowSearchState: ObservableObject {
     @Published var query = ""
     @Published private(set) var phase: DataFetchPhase<[TVShow]> = .empty
@@ -16,7 +17,7 @@ class TVShowSearchState: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     private let tvShowService: TVShowService
     
-    private var trimmedQuery: String {
+    var trimmedQuery: String {
         query.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
