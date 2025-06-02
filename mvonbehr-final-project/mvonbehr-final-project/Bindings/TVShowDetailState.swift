@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class TVShowDetailState: ObservableObject {
     private let tvShowService: TVShowService
     @Published var tvShow: TVShow?
