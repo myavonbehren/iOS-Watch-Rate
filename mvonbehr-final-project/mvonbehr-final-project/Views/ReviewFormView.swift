@@ -43,7 +43,8 @@ struct ReviewFormView: View {
                         newReview.id = UUID()
                         newReview.rating = Int16(rating)
                         newReview.content = review
-                        newReview.title = show.name
+                        newReview.title = show.name + " (\(show.yearText))"
+                        newReview.showID = Int32(show.id)
                         try? managedObjectContext.save()
                         dismiss()
                         dismiss()
