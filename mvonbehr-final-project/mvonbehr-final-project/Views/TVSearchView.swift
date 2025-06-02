@@ -10,8 +10,9 @@ import SwiftUI
 struct TVSearchView: View {
     @StateObject var tvSearchState = TVShowSearchState()
     
+    
     var body: some View {
-        NavigationView{
+        NavigationStack{
             List {
                 ForEach(tvSearchState.tvShows) { tvShow in
                     NavigationLink(destination: ReviewFormView(showId: tvShow.id)){
