@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ReviewFormView: View {
     private var show: TVShow
-    @State var rating: String = ""
+    @State var rating: Int = 1
     @State var review: String = ""
     
     init(show: TVShow) {
@@ -20,11 +20,7 @@ struct ReviewFormView: View {
         NavigationStack{
             Form {
                 Section {
-                    Picker("Rating", selection: $rating) {
-                        ForEach(1..<6) { value in
-                            Text(String(value)).tag(Int16(value))
-                        }
-                    }
+                    RatingView(rating: $rating)
                     TextField("Add a review...", text: $review, axis: .vertical)
                         .lineLimit(15...30)
                 }

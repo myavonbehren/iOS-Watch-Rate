@@ -20,10 +20,31 @@ struct RatingView: View {
     var onColor = Color.yellow
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            if label.isEmpty == false {
+                Text(label)
+            }
+            
+            ForEach(1..<maxRating + 1, id: \.self) { number in
+                Button {
+                    rating = number
+                } label: {
+                    image(for: number)
+                        .foregroundStyle(number > rating ? offColor : onColor)
+                }
+            }
+        }
+    }
+    
+    func image(for number: Int) -> Image {
+        if number > rating {
+            offImage ?? onImage
+        } else {
+            onImage
+        }
     }
 }
 
 #Preview {
-    RatingView(rating: .constant(4))
+    RatingView(rating: .constant(1))
 }
