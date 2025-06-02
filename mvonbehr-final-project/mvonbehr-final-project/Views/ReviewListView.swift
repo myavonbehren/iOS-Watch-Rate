@@ -23,7 +23,7 @@ struct ReviewListView: View {
                             Text(review.title ?? "No Title").font(.headline)
                     }
                 }
-            }
+            } .onDelete(perform: deleteReviews)
         }
             .navigationTitle(Text("Reviews"))
             .toolbar {
