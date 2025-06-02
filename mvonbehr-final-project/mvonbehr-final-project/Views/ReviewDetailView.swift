@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ReviewDetailView: View {
     let review: Review
-    @ObservedObject private var tvShowDetailState = TVShowDetailState()
+    @StateObject private var tvShowDetailState = TVShowDetailState()
     
     var body: some View {
         ZStack {
