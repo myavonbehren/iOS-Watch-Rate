@@ -16,7 +16,7 @@ struct ContentView: View {
                 .tabItem {
                     VStack {
                         Image(systemName: "star.fill")
-                        Text("Review List")
+                        Text("Reviews")
                     }
                 }
                 .tag(0)
