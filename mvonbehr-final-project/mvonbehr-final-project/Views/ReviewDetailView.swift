@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ReviewDetailView: View {
-    let showId: Int
+    let review: Review
     @ObservedObject private var tvShowDetailState = TVShowDetailState()
     
     var body: some View {
@@ -22,10 +22,9 @@ struct ReviewDetailView: View {
             } else if let show = tvShowDetailState.tvShow {
                 VStack (alignment: .leading, spacing: 10) {
                     TVShowContentView(show: show, showDescription: false)
-                    VStack (alignment: .leading) {
-                        Text("Star rating")
-                        Text("Liked")
-                        Text("Review text")
+                    VStack (alignment: .leading, spacing: 10) {
+                        RatingView(rating: .constant(Int(review.rating)))
+                        Text(review.content ?? "No review")
                     }.padding(.horizontal)
                 }
             }
@@ -37,10 +36,12 @@ struct ReviewDetailView: View {
     }
     
     private func loadShow() async {
-        await tvShowDetailState.loadTVShow(id: showId)
+        await tvShowDetailState.loadTVShow(id: Int(review.showID))
     }
 }
 
+/*
 #Preview {
-    ReviewDetailView(showId: TVShow.mockTVShow.id)
+    ReviewDetailView(review: <#T##Review#>()
 }
+*/
