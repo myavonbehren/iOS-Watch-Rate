@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WatchListDetailView: View {
     let showId: Int
-    @ObservedObject private var tvShowDetailState = TVShowDetailState()
+    @StateObject private var tvShowDetailState = TVShowDetailState()
     
     var body: some View {
         ZStack {
@@ -20,7 +20,7 @@ struct WatchListDetailView: View {
                     await loadShow()
                 }
             } else if let show = tvShowDetailState.tvShow {
-                VStack (alignment: .leading, spacing: 10) {
+                ScrollView{
                     TVShowContentView(show: show, showDescription: true)
                 }
             }
@@ -28,7 +28,6 @@ struct WatchListDetailView: View {
         .task {
             await loadShow()
         }
-        Spacer()
     }
     
     private func loadShow() async {
