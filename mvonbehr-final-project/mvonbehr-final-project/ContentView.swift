@@ -10,17 +10,19 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            
-            ReviewListView()
+            NavigationStack{
+                ReviewListView()
+            }
                 .tabItem {
                     VStack {
                         Image(systemName: "star.fill")
-                        Text("Reviews")
+                        Text("Review List")
                     }
                 }
                 .tag(0)
-
-            WatchListView()
+            NavigationStack{
+                WatchListView()
+            }
                 .tabItem {
                     VStack{
                         Image(systemName: "list.bullet")
