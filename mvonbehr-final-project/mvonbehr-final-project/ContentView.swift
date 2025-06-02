@@ -26,7 +26,7 @@ struct ContentView: View {
                 .tabItem {
                     VStack{
                         Image(systemName: "list.bullet")
-                        Text("Watch List")
+                        Text("Watchlist")
                     }
                 }
                 .tag(1)

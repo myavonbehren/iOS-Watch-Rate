@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct WatchListView: View {
+    @State private var showSearchPopOver: Bool = false
+    
     var body: some View {
-        Text("Watch List")
-            .navigationTitle(Text("Watch List"))
+        Text("Watchlist")
+            .navigationTitle(Text("Watchlist"))
             .toolbar {
                 Button("Add") {
-                    print("Pressed")
+                    showSearchPopOver = true
+                }
+            }
+            .popover(isPresented: $showSearchPopOver) {
+                TVSearchView(mode: .watchlist) { selectedShow in
+                    print("Add \(selectedShow.name) to watchlist")
                 }
             }
     }
