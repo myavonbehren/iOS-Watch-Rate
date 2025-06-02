@@ -34,7 +34,6 @@ struct ReviewFormView: View {
                     TextField("Add a review...", text: $review, axis: .vertical)
                         .lineLimit(10...25)
                 }
-                
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
