@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct EmptyPlaceHolderView: View {
+    let text: String
+    let image: Image?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 8) {
+            Spacer()
+            if let image = image {
+                image
+                    .imageScale(.large)
+                    .font(.system(size: 52))
+                    .foregroundColor(.secondary)
+            }
+            Text(text)
+                .foregroundColor(.secondary)
+            Spacer()
+        }
     }
 }
 
 #Preview {
-    EmptyPlaceHolderView()
+    EmptyPlaceHolderView(text: "No movies", image: Image(systemName: "film"))
 }
