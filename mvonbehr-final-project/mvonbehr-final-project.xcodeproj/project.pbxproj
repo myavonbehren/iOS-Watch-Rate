@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		ACBF71782DED4F1500B049CA /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBF71772DED4F1500B049CA /* RatingView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		AC2E7CB72DDBEDE2007F371C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		AC2E7CA92DDBEDE1007F371C /* mvonbehr-final-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mvonbehr-final-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2E7CB62DDBEDE2007F371C /* mvonbehr-final-projectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mvonbehr-final-projectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2E7CC02DDBEDE2007F371C /* mvonbehr-final-projectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mvonbehr-final-projectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACBF71772DED4F1500B049CA /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingView.swift; path = "mvonbehr-final-project/Views/RatingView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +80,7 @@
 		AC2E7CA02DDBEDE1007F371C = {
 			isa = PBXGroup;
 			children = (
+				ACBF71772DED4F1500B049CA /* RatingView.swift */,
 				AC2E7CAB2DDBEDE1007F371C /* mvonbehr-final-project */,
 				AC2E7CB92DDBEDE2007F371C /* mvonbehr-final-projectTests */,
 				AC2E7CC32DDBEDE2007F371C /* mvonbehr-final-projectUITests */,
@@ -236,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACBF71782DED4F1500B049CA /* RatingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
