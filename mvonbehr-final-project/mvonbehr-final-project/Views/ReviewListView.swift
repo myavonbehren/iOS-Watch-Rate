@@ -14,7 +14,7 @@ struct ReviewListView: View {
         Text("Reviews")
             .navigationTitle(Text("Reviews"))
             .toolbar {
-                Button("Add") {
+                Button("Add Review", systemImage: "plus") {
                     showSearchPopOver = true
                 }
             }

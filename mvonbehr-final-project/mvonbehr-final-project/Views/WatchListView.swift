@@ -14,7 +14,7 @@ struct WatchListView: View {
         Text("Watchlist")
             .navigationTitle(Text("Watchlist"))
             .toolbar {
-                Button("Add") {
+                Button("Add to watchlist", systemImage: "plus") {
                     showSearchPopOver = true
                 }
             }
