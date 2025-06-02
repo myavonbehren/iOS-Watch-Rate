@@ -10,6 +10,8 @@ import SwiftUI
 struct TVSearchView: View {
     @StateObject var tvSearchState = TVShowSearchState()
     let mode: SearchMode
+    let onShowSelected: ((TVShow) -> Void)?
+    
     
     var body: some View {
         NavigationStack{
@@ -51,6 +53,19 @@ struct TVSearchView: View {
         default: EmptyView()
         }
     }
+    
+    @ViewBuilder
+    private func rowView(for tvShow: TVShow) -> some View {
+        switch mode {
+        case .review:
+            NavigationLink(destination: ReviewFormView(showId: tvShow.id)) {
+                TVShowRowView(tvShow: tvShow).padding(.vertical, 8)
+            }
+        case .watchlist:
+            
+        }
+    }
+    
     
 }
 
