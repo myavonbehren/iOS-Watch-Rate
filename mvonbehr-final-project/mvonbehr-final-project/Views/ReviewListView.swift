@@ -16,7 +16,6 @@ struct ReviewListView: View {
         List {
             ForEach(reviews) { review in
                 NavigationLink {
-                    EmptyView()
                     ReviewDetailView(review: review)
                 } label : {
                         VStack(alignment: .leading) {
