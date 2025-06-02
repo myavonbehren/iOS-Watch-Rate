@@ -13,6 +13,7 @@ import Foundation
 class TVShowSearchState: ObservableObject {
     @Published var query = ""
     @Published private(set) var phase: DataFetchPhase<[TVShow]> = .empty
+    private var searchTask: Task<Void, Never>?
     
     private var cancellables = Set<AnyCancellable>()
     private let tvShowService: TVShowService
@@ -30,22 +31,23 @@ class TVShowSearchState: ObservableObject {
     }
     
     func startObserve() {
-        guard cancellables.isEmpty else { return }
+        guard cancellables.isEmpty else {return}
         
         $query
             .filter { $0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
             .sink { [weak self] _ in
+                self?.searchTask?.cancel()
                 self?.phase = .empty
             }
             .store(in: &cancellables)
-        
+
         $query
             .filter { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
             .debounce(for: 1, scheduler: DispatchQueue.main)
-            .sink { query in
-                Task { [weak self] in
-                    guard let self = self else { return }
-                    await self.search(query: query)
+            .sink { [weak self] query in
+                self?.searchTask?.cancel()
+                self?.searchTask = Task {
+                    await self?.search(query: query)
                 }
             }
             .store(in: &cancellables)
@@ -59,13 +61,12 @@ class TVShowSearchState: ObservableObject {
         guard !trimmedQuery.isEmpty else {
             return
         }
-        
+                
         do {
             let tvShows = try await tvShowService.searchTVShow(query: trimmedQuery)
             if Task.isCancelled { return }
             guard trimmedQuery == self.trimmedQuery else { return }
             phase = .success(tvShows)
-            
         } catch {
             if Task.isCancelled { return }
             guard trimmedQuery == self.trimmedQuery else { return }

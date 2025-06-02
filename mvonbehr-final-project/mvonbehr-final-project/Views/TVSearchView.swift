@@ -11,7 +11,7 @@ struct TVSearchView: View {
     @StateObject var tvSearchState = TVShowSearchState()
     
     var body: some View {
-        NavigationView {
+        NavigationView{
             List {
                 ForEach(tvSearchState.tvShows) { tvShow in
                     NavigationLink(destination: ReviewFormView(showId: tvShow.id)){
@@ -61,7 +61,6 @@ struct TVShowRowView: View {
             VStack(alignment: .leading) {
                 Text(tvShow.name)
                     .font(.headline)
-                
                 Text(tvShow.yearText)
                     .font(.subheadline)
             }
