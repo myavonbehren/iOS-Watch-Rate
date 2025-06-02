@@ -10,6 +10,12 @@ import SwiftUI
 struct WatchListView: View {
     var body: some View {
         Text("Watch List")
+            .navigationTitle(Text("Watch List"))
+            .toolbar {
+                Button("Add") {
+                    print("Pressed")
+                }
+            }
     }
 }
 
