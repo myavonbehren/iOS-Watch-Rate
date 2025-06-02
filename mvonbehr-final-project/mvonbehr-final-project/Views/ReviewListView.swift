@@ -35,6 +35,14 @@ struct ReviewListView: View {
                 TVSearchView(mode: .review, onShowSelected: nil)
             }
     }
+    
+    func deleteReviews(at offsets: IndexSet) {
+        for offset in offsets {
+            let review = reviews[offset]
+            managedObjectContext.delete(review)
+        }
+        try? managedObjectContext.save()
+    }
 }
 
 #Preview {
