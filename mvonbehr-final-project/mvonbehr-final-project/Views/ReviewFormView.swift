@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ReviewFormView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @Environment(\.dismiss) var dismiss
+    
     private var show: TVShow
-    @State var rating: Int = 1
+    @State var rating: Int = 0
     @State var review: String = ""
     
     init(show: TVShow) {
@@ -20,17 +23,30 @@ struct ReviewFormView: View {
         NavigationStack{
             Form {
                 Section {
+                    HStack {
+                        TVShowPosterView(show: show)
+                            .frame(width: 50, height: 75)
+                        Text(" \(show.name) (\(show.yearText))")
+                            .bold(true)
+                            .font(.title2)
+                    }
                     RatingView(rating: $rating)
                     TextField("Add a review...", text: $review, axis: .vertical)
                         .lineLimit(10...25)
                 }
                 
             }
-            .navigationTitle("\(show.name) (\(show.yearText))")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
-                        print("Add review button pressed")
+                        let newReview = Review(context: managedObjectContext)
+                        newReview.id = UUID()
+                        newReview.rating = Int16(rating)
+                        newReview.content = review
+                        newReview.title = show.name
+                        try? managedObjectContext.save()
+                        dismiss()
+                        dismiss()
                     }
                 }
             }
