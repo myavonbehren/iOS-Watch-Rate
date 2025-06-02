@@ -44,7 +44,7 @@ struct TVShow: Codable, Identifiable {
     
     var yearText: String {
         guard let date = Utils.dateFormatter.date(from: firstAirDate) else {
-            return "n/a"
+            return ""
         }
         return TVShow.yearFormatter.string(from: date)
     }
