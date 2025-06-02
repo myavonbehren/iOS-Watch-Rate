@@ -16,7 +16,9 @@ struct ReviewListView: View {
         List {
             ForEach(reviews) { review in
                 NavigationLink {
-                    ReviewDetailView(review: review)
+                    ScrollView{
+                        ReviewDetailView(review: review)
+                    }
                 } label : {
                         VStack(alignment: .leading) {
                             Text(review.title ?? "No Title").font(.headline)
