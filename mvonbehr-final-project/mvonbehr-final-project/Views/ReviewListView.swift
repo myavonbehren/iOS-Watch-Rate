@@ -13,7 +13,18 @@ struct ReviewListView: View {
     @FetchRequest(sortDescriptors: []) var reviews: FetchedResults<Review>
     
     var body: some View {
-        Text("Review Count: \(reviews.count)")
+        List {
+            ForEach(reviews) { review in
+                NavigationLink {
+                    EmptyView()
+                    //ReviewDetailView(show: show)
+                } label : {
+                        VStack(alignment: .leading) {
+                            Text(review.title ?? "No Title").font(.headline)
+                    }
+                }
+            }
+        }
             .navigationTitle(Text("Reviews"))
             .toolbar {
                 Button("Add Review", systemImage: "plus") {
