@@ -13,7 +13,7 @@ enum SearchMode {
     
     var title: String {
         switch self {
-        case .review: return "Search for shows to review"
+        case .review: return "Add a Review"
         case .watchlist: return "Add to Watchlist"
         }
     }
