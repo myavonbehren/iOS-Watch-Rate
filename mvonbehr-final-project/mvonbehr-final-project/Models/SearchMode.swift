@@ -7,6 +7,21 @@
 
 import Foundation
 
-/*
- 
- */
+enum SearchMode {
+    case review
+    case watchlist
+    
+    var title: String {
+        switch self {
+        case .review: return "Search for Reviews"
+        case .watchlist: return "Add to Watchlist"
+        }
+    }
+    
+    var prompt: String {
+        switch self {
+        case .review: return "Search TV shows to review"
+        case .watchlist: return "Search TV shows to add"
+        }
+    }
+}

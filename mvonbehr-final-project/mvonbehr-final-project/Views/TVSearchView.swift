@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TVSearchView: View {
     @StateObject var tvSearchState = TVShowSearchState()
-    
+    let mode: SearchMode
     
     var body: some View {
         NavigationStack{
