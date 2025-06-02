@@ -21,6 +21,7 @@ struct ReviewListView: View {
                 } label : {
                         VStack(alignment: .leading) {
                             Text(review.title ?? "No Title").font(.headline)
+                            RatingView(rating: .constant(Int(review.rating)))
                     }
                 }
             } .onDelete(perform: deleteReviews)
