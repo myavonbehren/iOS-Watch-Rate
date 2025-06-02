@@ -28,7 +28,7 @@ struct TVShow: Codable, Identifiable {
     
     var backdropURL: URL? {
         guard let backdropPath = backdropPath else { return nil }
-        return URL(string: "https://image.tmdb.org/t/p/w500\(backdropPath)")
+        return URL(string: "https://image.tmdb.org/t/p/w1280\(backdropPath)")
     }
     
     var posterURL: URL? {
