@@ -11,19 +11,21 @@ struct TVSearchView: View {
     @StateObject var tvSearchState = TVShowSearchState()
     
     var body: some View {
-        List {
-            ForEach(tvSearchState.tvShows) { tvShow in
-                NavigationLink(destination: ReviewFormView(showId: tvShow.id)){
-                    TVShowRowView(tvShow: tvShow).padding(.vertical, 8)
+        NavigationView {
+            List {
+                ForEach(tvSearchState.tvShows) { tvShow in
+                    NavigationLink(destination: ReviewFormView(showId: tvShow.id)){
+                        TVShowRowView(tvShow: tvShow).padding(.vertical, 8)
+                    }
                 }
             }
+            .searchable(text: $tvSearchState.query, prompt: "Search TV Shows")
+            .overlay(overlayView)
+            .onAppear{
+                self.tvSearchState.startObserve()
+            }
+            .navigationTitle(Text("Search TV Shows"))
         }
-        .searchable(text: $tvSearchState.query, prompt: "Search TV Shows")
-        .overlay(content: <#T##() -> View#>)
-        .onAppear{
-            self.tvSearchState.startObserve()
-        }
-        .navigationTitle(Text("Search TV Shows"))
     }
     
     @ViewBuilder
@@ -31,8 +33,21 @@ struct TVSearchView: View {
         switch tvSearchState.phase {
         case .empty:
             if tvSearchState.trimmedQuery.isEmpty {
-               
+               EmptyPlaceHolderView(text: "Search for TV Shows", image: Image(systemName: "magnifyingglass"))
+            } else {
+                ProgressView()
             }
+        case .success(let values) where values.isEmpty:
+            EmptyPlaceHolderView(text: "No TV Shows Found", image: Image(systemName: "exclamationmark.triangle"))
+            
+        case .failure(let error):
+            ErrorView(error: error, retry: {
+                Task {
+                    await tvSearchState.search(query: tvSearchState.trimmedQuery)
+                }
+            })
+            
+        default: EmptyView()
         }
     }
     
@@ -49,7 +64,6 @@ struct TVShowRowView: View {
                 
                 Text(tvShow.yearText)
                     .font(.subheadline)
-                Spacer()
             }
         }
         
