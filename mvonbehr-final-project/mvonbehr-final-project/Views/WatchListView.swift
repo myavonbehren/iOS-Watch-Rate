@@ -32,8 +32,11 @@ struct WatchListView: View {
         }
         .popover(isPresented: $showSearchPopOver) {
             TVSearchView(mode: .watchlist) { selectedShow in
-                
-                print("Add \(selectedShow.name) to watchlist")
+                let newWatch = Watch(context: managedObjectContext)
+                newWatch.id = UUID()
+                newWatch.title = selectedShow.name
+                newWatch.showID = Int32(selectedShow.id)
+                try? managedObjectContext.save()
             }
         }
     }
