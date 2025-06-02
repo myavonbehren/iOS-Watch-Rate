@@ -10,6 +10,12 @@ import SwiftUI
 struct ReviewListView: View {
     var body: some View {
         Text("Reviews")
+            .navigationTitle(Text("Reviews"))
+            .toolbar {
+                Button("Add") {
+                    print("Pressed")
+                }
+            }
     }
 }
 
