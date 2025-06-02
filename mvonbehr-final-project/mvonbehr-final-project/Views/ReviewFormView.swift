@@ -22,16 +22,18 @@ struct ReviewFormView: View {
                 Section {
                     RatingView(rating: $rating)
                     TextField("Add a review...", text: $review, axis: .vertical)
-                        .lineLimit(15...30)
-                }
-                Section {
-                    Button("Save") {
-                        print("save pressed")
-                    }
+                        .lineLimit(10...25)
                 }
                 
             }
             .navigationTitle("\(show.name) (\(show.yearText))")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Save") {
+                        print("Add review button pressed")
+                    }
+                }
+            }
         }
     }
 }
