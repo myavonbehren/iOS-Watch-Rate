@@ -20,7 +20,7 @@ struct TVSearchView: View {
                     rowView(for: tvShow)
                 }
             }
-            .searchable(text: $tvSearchState.query, prompt: "Search TV Shows")
+            .searchable(text: $tvSearchState.query, prompt: mode.prompt)
             .overlay(overlayView)
             .onAppear{
                 self.tvSearchState.startObserve()
