@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct ReviewListView: View {
+    @State private var showSearchPopOver: Bool = false
+
     var body: some View {
         Text("Reviews")
             .navigationTitle(Text("Reviews"))
             .toolbar {
                 Button("Add") {
-                    print("Pressed")
+                    showSearchPopOver = true
                 }
+            }
+            .popover(isPresented: $showSearchPopOver) {
+                TVSearchView(mode: .review, onShowSelected: nil)
             }
     }
 }

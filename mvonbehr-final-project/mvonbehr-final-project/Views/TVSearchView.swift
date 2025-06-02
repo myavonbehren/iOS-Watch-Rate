@@ -11,15 +11,13 @@ struct TVSearchView: View {
     @StateObject var tvSearchState = TVShowSearchState()
     let mode: SearchMode
     let onShowSelected: ((TVShow) -> Void)?
-    
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         NavigationStack{
             List {
                 ForEach(tvSearchState.tvShows) { tvShow in
-                    NavigationLink(destination: ReviewFormView(showId: tvShow.id)){
-                        TVShowRowView(tvShow: tvShow).padding(.vertical, 8)
-                    }
+                    rowView(for: tvShow)
                 }
             }
             .searchable(text: $tvSearchState.query, prompt: "Search TV Shows")
@@ -27,7 +25,15 @@ struct TVSearchView: View {
             .onAppear{
                 self.tvSearchState.startObserve()
             }
-            .navigationTitle(Text("Search TV Shows"))
+            .navigationTitle(mode.title)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
+                }
+            }
         }
     }
     
@@ -62,11 +68,20 @@ struct TVSearchView: View {
                 TVShowRowView(tvShow: tvShow).padding(.vertical, 8)
             }
         case .watchlist:
-            
+            Button {
+                onShowSelected?(tvShow)
+                dismiss()
+            } label: {
+                HStack {
+                    TVShowRowView(tvShow: tvShow).padding(.vertical, 8)
+                    Spacer()
+                    Image(systemName: "plus.circle.fill")
+                        .foregroundColor(.blue)
+                }
+            }
+            .buttonStyle(.plain)
         }
     }
-    
-    
 }
 
 struct TVShowRowView: View {
@@ -74,6 +89,8 @@ struct TVShowRowView: View {
     
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
+            TVShowPosterView(show: tvShow)
+                .frame(width: 61, height: 92)
             VStack(alignment: .leading) {
                 Text(tvShow.name)
                     .font(.headline)
@@ -84,7 +101,8 @@ struct TVShowRowView: View {
         
     }
 }
-
+/*
 #Preview {
     TVSearchView()
 }
+*/
