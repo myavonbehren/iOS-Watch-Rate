@@ -9,20 +9,33 @@ import SwiftUI
 
 struct WatchListView: View {
     @State private var showSearchPopOver: Bool = false
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(sortDescriptors: []) var watchlist: FetchedResults<Watch>
+    
     
     var body: some View {
-        Text("Watchlist")
-            .navigationTitle(Text("Watchlist"))
-            .toolbar {
-                Button("Add to watchlist", systemImage: "plus") {
-                    showSearchPopOver = true
+        List {
+            ForEach(watchlist) { watched in
+                NavigationLink {
+                    EmptyView()
+                    //WatchListDetailView(showId: Int($watchlist.showID))
+                } label : {
+                    Text(watched.title ?? "No Title").font(.headline)
                 }
             }
-            .popover(isPresented: $showSearchPopOver) {
-                TVSearchView(mode: .watchlist) { selectedShow in
-                    print("Add \(selectedShow.name) to watchlist")
-                }
+        }
+        .navigationTitle(Text("Watchlist"))
+        .toolbar {
+            Button("Add to watchlist", systemImage: "plus") {
+                showSearchPopOver = true
             }
+        }
+        .popover(isPresented: $showSearchPopOver) {
+            TVSearchView(mode: .watchlist) { selectedShow in
+                
+                print("Add \(selectedShow.name) to watchlist")
+            }
+        }
     }
 }
 
