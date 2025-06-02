@@ -52,11 +52,11 @@ struct TVShow: Codable, Identifiable {
 
 extension TVShow {
     static let mockTVShow = TVShow(
-        id: 1668,
-        name: "Friends",
-        overview: "Six young people from New York City, on their own and struggling to survive in the real world, find the companionship, comfort and support they get from each other to be the perfect antidote to the pressures of life.",
-        backdropPath: "/l0qVZIpXtIo7km9u5Yqh0nKPOr5.jpg",
-        posterPath: "/2koX1xLkpTQM4IZebYvKysFW1Nh.jpg",
-        firstAirDate: "1994-09-22"
+        id: 119051,
+        name: "Wednesday",
+        overview: "Wednesday Addams is sent to Nevermore Academy, a bizarre boarding school where she attempts to master her psychic powers, stop a monstrous killing spree of the town citizens, and solve the supernatural mystery that affected her family 25 years ago — all while navigating her new relationships.",
+        backdropPath: "/iHSwvRVsRyxpX7FE7GbviaDvgGZ.jpg",
+        posterPath: "/i2MwS6U0XzD8ad6aS3HiTNKz8ov.jpg",
+        firstAirDate: "2022-11-23"
     )
 }
