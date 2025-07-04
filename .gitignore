@@ -1,0 +1,8 @@
+# API Keys and sensitive config
+Config.plist
+
+# Xcode
+*.xcuserstate
+project.xcworkspace/xcuserdata/
+*.xcuserstate
+mvonbehr-final-project/mvonbehr-final-project/Config.plist
