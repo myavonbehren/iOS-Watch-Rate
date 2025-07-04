@@ -6,7 +6,7 @@
 //
 
 import Testing
-@testable import mvonbehr_final_project
+@testable import Watch_Rate
 
 struct mvonbehr_final_projectTests {
 
