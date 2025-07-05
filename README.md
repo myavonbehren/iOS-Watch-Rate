@@ -87,11 +87,6 @@ This app uses [The Movie Database (TMDB) API](https://www.themoviedb.org/documen
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/myavonbehren/iOS-Watch-Rate/blob/main/LICENSE) file for details.
 
-## Acknowledgments
-
-- [The Movie Database (TMDB)](https://www.themoviedb.org/) for providing comprehensive TV show data
-- iOS development community for inspiration and best practices
-
 ## Contact
 
 Mya Von Behren - myakvb@gmail.com
