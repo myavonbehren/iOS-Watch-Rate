@@ -6,27 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		AC2E7CB72DDBEDE2007F371C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AC2E7CA12DDBEDE1007F371C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AC2E7CA82DDBEDE1007F371C;
-			remoteInfo = "mvonbehr-final-project";
-		};
-		AC2E7CC12DDBEDE2007F371C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AC2E7CA12DDBEDE1007F371C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AC2E7CA82DDBEDE1007F371C;
-			remoteInfo = "mvonbehr-final-project";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		AC2E7CA92DDBEDE1007F371C /* Watch-Rate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Watch-Rate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC2E7CB62DDBEDE2007F371C /* Watch-RateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Watch-RateTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC2E7CC02DDBEDE2007F371C /* Watch-RateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Watch-RateUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -35,34 +16,10 @@
 			path = "Watch-Rate";
 			sourceTree = "<group>";
 		};
-		AC2E7CB92DDBEDE2007F371C /* mvonbehr-final-projectTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "mvonbehr-final-projectTests";
-			sourceTree = "<group>";
-		};
-		AC2E7CC32DDBEDE2007F371C /* mvonbehr-final-projectUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "mvonbehr-final-projectUITests";
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AC2E7CA62DDBEDE1007F371C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC2E7CB32DDBEDE2007F371C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC2E7CBD2DDBEDE2007F371C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,8 +33,6 @@
 			isa = PBXGroup;
 			children = (
 				AC2E7CAB2DDBEDE1007F371C /* Watch-Rate */,
-				AC2E7CB92DDBEDE2007F371C /* mvonbehr-final-projectTests */,
-				AC2E7CC32DDBEDE2007F371C /* mvonbehr-final-projectUITests */,
 				AC2E7CAA2DDBEDE1007F371C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,8 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				AC2E7CA92DDBEDE1007F371C /* Watch-Rate.app */,
-				AC2E7CB62DDBEDE2007F371C /* Watch-RateTests.xctest */,
-				AC2E7CC02DDBEDE2007F371C /* Watch-RateUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,52 +70,6 @@
 			productReference = AC2E7CA92DDBEDE1007F371C /* Watch-Rate.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AC2E7CB52DDBEDE2007F371C /* Watch-RateTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AC2E7CCD2DDBEDE2007F371C /* Build configuration list for PBXNativeTarget "Watch-RateTests" */;
-			buildPhases = (
-				AC2E7CB22DDBEDE2007F371C /* Sources */,
-				AC2E7CB32DDBEDE2007F371C /* Frameworks */,
-				AC2E7CB42DDBEDE2007F371C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AC2E7CB82DDBEDE2007F371C /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				AC2E7CB92DDBEDE2007F371C /* mvonbehr-final-projectTests */,
-			);
-			name = "Watch-RateTests";
-			packageProductDependencies = (
-			);
-			productName = "mvonbehr-final-projectTests";
-			productReference = AC2E7CB62DDBEDE2007F371C /* Watch-RateTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		AC2E7CBF2DDBEDE2007F371C /* Watch-RateUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AC2E7CD02DDBEDE2007F371C /* Build configuration list for PBXNativeTarget "Watch-RateUITests" */;
-			buildPhases = (
-				AC2E7CBC2DDBEDE2007F371C /* Sources */,
-				AC2E7CBD2DDBEDE2007F371C /* Frameworks */,
-				AC2E7CBE2DDBEDE2007F371C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AC2E7CC22DDBEDE2007F371C /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				AC2E7CC32DDBEDE2007F371C /* mvonbehr-final-projectUITests */,
-			);
-			name = "Watch-RateUITests";
-			packageProductDependencies = (
-			);
-			productName = "mvonbehr-final-projectUITests";
-			productReference = AC2E7CC02DDBEDE2007F371C /* Watch-RateUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -175,14 +82,6 @@
 				TargetAttributes = {
 					AC2E7CA82DDBEDE1007F371C = {
 						CreatedOnToolsVersion = 16.3;
-					};
-					AC2E7CB52DDBEDE2007F371C = {
-						CreatedOnToolsVersion = 16.3;
-						TestTargetID = AC2E7CA82DDBEDE1007F371C;
-					};
-					AC2E7CBF2DDBEDE2007F371C = {
-						CreatedOnToolsVersion = 16.3;
-						TestTargetID = AC2E7CA82DDBEDE1007F371C;
 					};
 				};
 			};
@@ -201,28 +100,12 @@
 			projectRoot = "";
 			targets = (
 				AC2E7CA82DDBEDE1007F371C /* Watch-Rate */,
-				AC2E7CB52DDBEDE2007F371C /* Watch-RateTests */,
-				AC2E7CBF2DDBEDE2007F371C /* Watch-RateUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AC2E7CA72DDBEDE1007F371C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC2E7CB42DDBEDE2007F371C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC2E7CBE2DDBEDE2007F371C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -239,34 +122,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC2E7CB22DDBEDE2007F371C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC2E7CBC2DDBEDE2007F371C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AC2E7CB82DDBEDE2007F371C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AC2E7CA82DDBEDE1007F371C /* Watch-Rate */;
-			targetProxy = AC2E7CB72DDBEDE2007F371C /* PBXContainerItemProxy */;
-		};
-		AC2E7CC22DDBEDE2007F371C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AC2E7CA82DDBEDE1007F371C /* Watch-Rate */;
-			targetProxy = AC2E7CC12DDBEDE2007F371C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AC2E7CC82DDBEDE2007F371C /* Debug */ = {
@@ -448,78 +304,6 @@
 			};
 			name = Release;
 		};
-		AC2E7CCE2DDBEDE2007F371C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6LYUN3ZU6G;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mvonbehren.mvonbehr-final-projectTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Watch-Rate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Watch-Rate";
-			};
-			name = Debug;
-		};
-		AC2E7CCF2DDBEDE2007F371C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6LYUN3ZU6G;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mvonbehren.mvonbehr-final-projectTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Watch-Rate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Watch-Rate";
-			};
-			name = Release;
-		};
-		AC2E7CD12DDBEDE2007F371C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6LYUN3ZU6G;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mvonbehren.mvonbehr-final-projectUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "mvonbehr-final-project";
-			};
-			name = Debug;
-		};
-		AC2E7CD22DDBEDE2007F371C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6LYUN3ZU6G;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mvonbehren.mvonbehr-final-projectUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "mvonbehr-final-project";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -537,24 +321,6 @@
 			buildConfigurations = (
 				AC2E7CCB2DDBEDE2007F371C /* Debug */,
 				AC2E7CCC2DDBEDE2007F371C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AC2E7CCD2DDBEDE2007F371C /* Build configuration list for PBXNativeTarget "Watch-RateTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AC2E7CCE2DDBEDE2007F371C /* Debug */,
-				AC2E7CCF2DDBEDE2007F371C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AC2E7CD02DDBEDE2007F371C /* Build configuration list for PBXNativeTarget "Watch-RateUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AC2E7CD12DDBEDE2007F371C /* Debug */,
-				AC2E7CD22DDBEDE2007F371C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
