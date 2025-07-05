@@ -44,7 +44,7 @@ open Watch-Rate.xcodeproj
    - Visit [TMDB API](https://www.themoviedb.org/settings/api)
    - Create a free account and request an API key
    - Add your API key to the project configuration
-4. Build and run the project in XCode
+4. Build and run the project in Xcode
 
 ## Usage
 
