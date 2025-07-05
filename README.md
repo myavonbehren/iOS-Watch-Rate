@@ -1,9 +1,7 @@
 # iOS Watch Rate
-
 A sleek iOS app that helps you track and review your favorite TV shows using The Movie Database (TMDB) API. Keep tabs on shows you've watched with personal reviews and ratings, while building a watchlist of shows you want to see next.
 
 ## Features
-
 - **Personal Reviews**: Track shows you've watched with custom star ratings and detailed reviews
 - **Watchlist Management**: Save shows you want to watch later with descriptions and cover art
 - **TMDB Integration**: Access comprehensive TV show data including release dates, descriptions, and high-quality images
