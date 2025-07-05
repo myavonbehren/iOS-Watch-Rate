@@ -12,6 +12,10 @@ A sleek iOS app that helps you track and review your favorite TV shows using The
 
 ## Screenshots
 
+<img src="https://github.com/myavonbehren/iOS-Watch-Rate/blob/main/Screenshots/4.png" width="160">  <img src="https://github.com/myavonbehren/iOS-Watch-Rate/blob/main/Screenshots/5.png" width="160">  <img src="https://github.com/myavonbehren/iOS-Watch-Rate/blob/main/Screenshots/6.png" width="160">  <img src="https://github.com/myavonbehren/iOS-Watch-Rate/blob/main/Screenshots/9.png" width="160">  <img src="https://github.com/myavonbehren/iOS-Watch-Rate/blob/main/Screenshots/7.png" width="160">  <img src="https://github.com/myavonbehren/iOS-Watch-Rate/blob/main/Screenshots/8.png" width="160">
+
+
+
 
 
 ## Requirements
