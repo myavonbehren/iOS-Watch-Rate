@@ -76,7 +76,6 @@ This app uses [The Movie Database (TMDB) API](https://www.themoviedb.org/documen
 
 - Show metadata (titles, release dates, descriptions)
 - High-resolution poster images
-- Episode information and ratings
 
 ## Future Enhancements
 
