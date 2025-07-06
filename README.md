@@ -60,7 +60,7 @@ open Watch-Rate.xcodeproj
 - Tap any show to see the full description and poster
 - Easily manage your queue of upcoming shows to watch
 
-## Technologies Used
+## Tech Stack
 
 - **Swift** - Primary programming language
 - **SwiftUI** - User interface framework
